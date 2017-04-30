@@ -8,26 +8,50 @@
 
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
+		<script>
+		function RequeteApi(url,id){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var myObj = this.responseText;
+					var jsonPretty = JSON.stringify(JSON.parse(myObj),null,2);
+					document.getElementById(id).innerHTML = jsonPretty;
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+		}
+		function HomePageLoading(){
+			RequeteApi("https://bitcoin.mubiz.com/info","WsInfo");
+			RequeteApi("https://bitcoin.mubiz.com/blockchaininfo","BlockchainInfo");
+			RequeteApi("https://bitcoin.mubiz.com/mininginfo","MiningInfo");
+			RequeteApi("https://bitcoin.mubiz.com/peerinfo","PeerInfo");
+		}
+		
+				
+	</script>
 
   <body>
+	<a href="https://clark68500.github.io/Bitcoin/explorer/index.html">Explorer Bitcoin</a>
+   	<a href="https://clark68500.github.io/index.html">Retour</a>
   	<h3>WS /info</h3>
       <pre>
-         	<code id="info" class="json kljs"></code>  <!--exemple de code html pour afficher la réponse reçue du webService dans a page html-->
+         	<code id="WsInfo" class="json kljs"></code>
       </pre>
 
       <h3>WS /blockchaininfo</h3>
       <pre>
-         	<code id="blockchaininfo" class="json kljs"></code>  <!--exemple de code html pour afficher la réponse reçue du webService dans a page html-->
+         	<code id="BlockchainInfo" class="json kljs"></code>
       </pre>
 
       <h3>WS /peerinfo</h3>
       <pre>
-         	<code id="peerinfo" class="json kljs"></code>  <!--exemple de code html pour afficher la réponse reçue du webService dans a page html-->
+         	<code id="MiningInfo" class="json kljs"></code>
       </pre>
 
       <h3>WS /mininginfo</h3>
       <pre>
-         	<code id="mininginfo" class="json kljs"></code>  <!--exemple de code html pour afficher la réponse reçue du webService dans a page html-->
+         	<code id="PeerInfo" class="json kljs"></code>
       </pre>
       <p><a href="https://Clark68500.github.io/Bitcoin/explorer/index.html">EXPLORER</a></p>
 
