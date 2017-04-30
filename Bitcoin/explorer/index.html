@@ -59,7 +59,6 @@
 	<div class="row">
 			<div class="col-lg-12 col-xs-6">
 			<pre>
-				<h3>Resultat de la requete Bitcoin</h3>
 				<code id="BitAddress" class="json kljs"></code>				
 		   	</pre>
 			</div>
@@ -78,7 +77,6 @@
 	<div class="row">
 			<div class="col-lg-12 col-xs-6">
 			<pre>
-				<h3>Resultat</h3>
 				<code id="transachash" class="json kljs"></code>				
 		   	</pre>
 			</div>
@@ -96,7 +94,6 @@
 	<div class="row">
 			<div class="col-lg-12 col-xs-6">
 			<pre>
-				<h3>Resultat</h3>
 				<code id="blochash" class="json kljs"></code>				
 		   	</pre>
 			</div>
@@ -107,19 +104,17 @@
 			<label for="inputIndexbloc" class="col-sm-2 control-label">Index de bloc</label>
 			<div class="col-sm-10">
 			<input type="Index" class="form-control" id="inputIndexbloc" onchange="update_val4()" placeholder="Index de bloc">
-			<button type="button" class="btn btn-default" onclick =RequeteApi("https://bitcoin.mubiz.com/block_index/"+Indexbloc+"/","blockindex")>Afficher le resultat</button>
+			<button type="button" class="btn btn-default" onclick =RequeteApi("https://bitcoin.mubiz.com/block_index/"+Indexbloc+"/","blockindex")>Resultat</button>
 			</div>
 		</div>			  
 	</form> 
 	<div class="row">
 			<div class="col-lg-12 col-xs-6">
 			<pre>
-				<h3>Resultat</h3>
+
 				<code id="blockindex" class="json kljs"></code>				
 		   	</pre>
 			</div>
 	</div>
-	
-	
 	</body>
 </html>
